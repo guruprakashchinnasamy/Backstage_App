@@ -1,0 +1,20 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: Inventory
+  description: These API are created for accessing inventory data.
+  tags:
+    - inventory
+    - rest
+    - api
+    # Example for optional annotations
+  annotations:
+    #github.com/project-slug: backstage/backstage
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: openapi
+  lifecycle: production
+  owner: user:guest
+  system: inventory-api
+  definition:
+    $text: https://github.com/guruprakashchinnasamy/TestBackstage/blob/main/inventory/SwaggerInventory.yaml

@@ -1,0 +1,25 @@
+site_name: 'Inventory API'
+repo_url: https://github.com/guruprakashchinnasamy/TestBackstage
+edit_uri: edit/master/inventory/docs
+
+nav:
+  - Overview:
+      - What is Inventory API?: 'overview/what-is-inventory-API.md'
+  - Database Used:
+      - Membership: 'database-used/membership.md'
+      - Inventory: 'database-used/inventory-database.md'
+  - Users:
+      - Internal Team : 'users/internal-team.md'
+      - Thrid Party Team : 'users/thirdparty-team.md'
+  - API:
+      - (GET) Products: 'api/get-products.md'
+      - (POST) Products: 'api/post-products.md'
+      - (GET) Products {id}: 'api/get-product-id.md'
+      - (PUT) Products {id}: 'api/put-product.md'
+      
+  #- Subpage: sub-page.md
+  #- 'Code Sample': code/code-sample.md
+  #- Extensions: extensions.md
+
+plugins:
+  - techdocs-core
