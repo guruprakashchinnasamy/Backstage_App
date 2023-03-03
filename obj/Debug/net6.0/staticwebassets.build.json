@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "K86+e1l82z7Xt/dV5KLKvb3kIcL49vSvTVpts8J/Evg=",
+  "Hash": "0wGMkn8ZqgDE7gHFRDQc9Qc3yWm+cgYbfHEX1VsLAfw=",
   "Source": "WebApplication1",
   "BasePath": "_content/WebApplication1",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "WebApplication1\\wwwroot",
       "Source": "WebApplication1",
-      "ContentRoot": "E:\\backstage\\backstage-dotnet-webapi\\Backstage_App\\WebApplication1\\wwwroot\\",
+      "ContentRoot": "E:\\backstage\\backstage-dotnet-webapi\\Backstage_App\\wwwroot\\",
       "BasePath": "_content/WebApplication1",
       "Pattern": "**"
     }

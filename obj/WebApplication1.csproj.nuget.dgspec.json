@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\backstage\\backstage-dotnet-webapi\\Backstage_App\\WebApplication1\\WebApplication1.csproj": {}
+    "E:\\backstage\\backstage-dotnet-webapi\\Backstage_App\\WebApplication1.csproj": {}
   },
   "projects": {
-    "E:\\backstage\\backstage-dotnet-webapi\\Backstage_App\\WebApplication1\\WebApplication1.csproj": {
+    "E:\\backstage\\backstage-dotnet-webapi\\Backstage_App\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\backstage\\backstage-dotnet-webapi\\Backstage_App\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "E:\\backstage\\backstage-dotnet-webapi\\Backstage_App\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "E:\\backstage\\backstage-dotnet-webapi\\Backstage_App\\WebApplication1\\WebApplication1.csproj",
+        "projectPath": "E:\\backstage\\backstage-dotnet-webapi\\Backstage_App\\WebApplication1.csproj",
         "packagesPath": "C:\\Users\\Guruprakash C\\.nuget\\packages\\",
-        "outputPath": "E:\\backstage\\backstage-dotnet-webapi\\Backstage_App\\WebApplication1\\obj\\",
+        "outputPath": "E:\\backstage\\backstage-dotnet-webapi\\Backstage_App\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Guruprakash C\\AppData\\Roaming\\NuGet\\NuGet.Config",
