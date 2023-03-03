@@ -17,4 +17,4 @@ spec:
   owner: user:guest
   system: inventory-api
   definition:
-    $text: https://github.com/guruprakashchinnasamy/Backstage_App/blob/main/inventory/SwaggerInventory.yaml
+    $text: https://github.com/guruprakashchinnasamy/Backstage_App/blob/main/Backstage_docs/SwaggerInventory.yaml
