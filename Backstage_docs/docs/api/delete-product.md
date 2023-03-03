@@ -9,7 +9,7 @@ Request-url: https://localhost:7175/api/Products/1
 
 | Key             | Value |
 | --------------| ----- |
-| Authorization | {API Key} |
+| Authorization | {{API Key}} |
 | Content-Type | application/json |
 
 #### Response Code: 200
