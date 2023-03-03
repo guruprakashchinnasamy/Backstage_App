@@ -23,7 +23,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Products>>> GetProducts(bool? inStock, int? skip, int? take)
+        public async Task<ActionResult<IEnumerable<Products>>> TestGetProducts(bool? inStock, int? skip, int? take)
         {
             var products = _context.Products.AsQueryable();
 
@@ -103,21 +103,21 @@ namespace WebApplication1.Controllers
             return CreatedAtAction("GetProducts", new { id = products.ProductId }, products);
         }
 
-        //// DELETE: api/Products/5
-        //[HttpDelete("{id}")]
-        //public async Task<ActionResult<Products>> DeleteProducts(int id)
-        //{
-        //    var products = await _context.Products.FindAsync(id);
-        //    if (products == null)
-        //    {
-        //        return NotFound();
-        //    }
+        // DELETE: api/Products/5
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Products>> DeleteProducts(int id)
+        {
+            var products = await _context.Products.FindAsync(id);
+            if (products == null)
+            {
+                return NotFound();
+            }
 
-        //    _context.Products.Remove(products);
-        //    await _context.SaveChangesAsync();
+            _context.Products.Remove(products);
+            await _context.SaveChangesAsync();
 
-        //    return products;
-        //}
+            return products;
+        }
 
         private bool ProductsExists(int id)
         {
