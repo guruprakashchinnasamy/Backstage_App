@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "K86+e1l82z7Xt/dV5KLKvb3kIcL49vSvTVpts8J/Evg=",
+  "Source": "WebApplication1",
+  "BasePath": "_content/WebApplication1",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "WebApplication1\\wwwroot",
+      "Source": "WebApplication1",
+      "ContentRoot": "E:\\backstage\\backstage-dotnet-webapi\\Backstage_App\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}
