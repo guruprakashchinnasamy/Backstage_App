@@ -19,8 +19,8 @@ jobs:
         with:
           script: |
             const { spawn } = require('child_process');
-            const swaggerFile = 'https://raw.githubusercontent.com/guruprakashchinnasamy/Backstage_App/main/Backstage_docs/SwaggerInventory.yaml';
-            const outputDir = 'guruprakashchinnasamy/Backstage_App/Backstage_docs/testdocs';
+            const swaggerFile = 'https://github.com/guruprakashchinnasamy/Backstage_App/blob/main/Backstage_docs/SwaggerInventory.yaml';
+            const outputDir = 'https://github.com/guruprakashchinnasamy/Backstage_App/blob/main/Backstage_docs/testdocs.md';
             const child = spawn('npx', ['swagger-to-markdown', '-i', swaggerFile, '-o', outputDir]);
             child.on('exit', (code) => {
               if (code === 0) {
