@@ -20,7 +20,7 @@ jobs:
 
     - name: Generate Markdown
       run: |
-        swagger-to-markdown -i Backstage_docs/SwaggerInventory.yaml -o OUTPUT_DIR/swagger.md
+        swagger-to-markdown -i https://github.com/guruprakashchinnasamy/Backstage_App/blob/main/Backstage_docs/SwaggerInventory.yaml -o OUTPUT_DIR/swagger.md
 
     - name: Commit changes
       run: |
