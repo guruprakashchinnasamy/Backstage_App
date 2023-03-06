@@ -6,20 +6,16 @@ on:
       - '**.yaml' # Replace with the path to your Swagger spec file
 
 jobs:
-  convert:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-
-      - name: Install dependencies
-        run: npm install swagger-markdown
-
-      - name: Convert Swagger to Markdown
-        run: npx swagger-markdown -i https://raw.githubusercontent.com/guruprakashchinnasamy/Backstage_App/main/Backstage_docs/SwaggerInventory.yaml -o path/to/swagger.md
+    - name: Generate Markdown
+      uses: sdelamo/swagger2markup@v3
+      with:
+        input: https://raw.githubusercontent.com/guruprakashchinnasamy/Backstage_App/main/Backstage_docs/SwaggerInventory.yaml
+        outputDir: docs
+        output: swagger
+        markupLanguage: MARKDOWN
