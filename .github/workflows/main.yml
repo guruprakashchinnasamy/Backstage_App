@@ -6,30 +6,14 @@ on:
       - '**.yaml' # Replace with the path to your Swagger spec file
 
 jobs:
-  build:
+  generate:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-
-    - name: Install dependencies
-      run: |
-        sudo apt-get install nodejs
-        sudo apt-get install npm
-        npm install -g swagger-to-markdown
-
-    - name: Generate Markdown
-      run: |
-        swagger-to-markdown -i https://github.com/guruprakashchinnasamy/Backstage_App/blob/main/Backstage_docs/SwaggerInventory.yaml -o OUTPUT_DIR/swagger.md
-
-    - name: Commit changes
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add .
-        git commit -m "Updated Swagger documentation [skip ci]"
-    
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GIT_ACTION }}
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Install dependencies
+        run: npm install swagger-to-markdown --save-dev
+      
+      - name: Generate Markdown
+        run: npx swagger-to-markdown -i guruprakashchinnasamy/Backstage_App/blob/main/Backstage_docs/SwaggerInventory.yaml -o docs/swagger.md
