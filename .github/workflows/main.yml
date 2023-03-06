@@ -19,8 +19,8 @@ jobs:
         with:
           script: |
             const { spawn } = require('child_process');
-            const swaggerFile = 'Backstage_docs/SwaggerInventordy.yaml';
-            const outputDir = 'Backstage_docs/testdocs';
+            const swaggerFile = 'https://github.com/guruprakashchinnasamy/Backstage_App/edit/main/Backstage_docs/SwaggerInventordy.yaml';
+            const outputDir = 'https://github.com/guruprakashchinnasamy/Backstage_App/edit/main/Backstage_docs/testdocs';
             const child = spawn('npx', ['swagger-to-markdown', '-i', swaggerFile, '-o', outputDir]);
             child.on('exit', (code) => {
               if (code === 0) {
@@ -32,4 +32,4 @@ jobs:
                 process.exit(1);
               }
             });
-          token: ${{ secrets.GGGG }}
+          token: ${{ secrets.GIT_ACTION }}
