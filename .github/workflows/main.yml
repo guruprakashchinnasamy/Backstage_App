@@ -32,4 +32,4 @@ jobs:
                 process.exit(1);
               }
             });
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GGGG }}
