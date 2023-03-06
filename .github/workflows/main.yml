@@ -1,34 +1,27 @@
-name: Generate TechDocs from Swagger
+name: Generate .md files from Swagger
 
 on:
   push:
-    paths:
-      - '/guruprakashchinnasamy/Backstage_App/Backstage_docs/SwaggerInventory.yaml' # Replace with your Swagger file path
+    branches:
+      - main
 
 jobs:
-  generate-techdocs:
+  generate-md:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16.x'
-
       - name: Install dependencies
-        run: yarn install
+        run: npm install
 
-      - name: Generate TechDocs
-        run: yarn run generate:docs
+      - name: Generate .md files
+        run: npx openapi-generator-cli generate -i https://raw.githubusercontent.com/guruprakashchinnasamy/Backstage_App/main/Backstage_docs/SwaggerInventory.yaml -g markdown -o ./docs
 
       - name: Commit and push changes
-        uses: EndBug/add-and-commit@v7
-        with:
-          message: 'Update TechDocs from Swagger'
-          add: '.backstage/*'
-          push: 'true'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add docs
+          git commit -m "Update .md files from Swagger"
+          git push
