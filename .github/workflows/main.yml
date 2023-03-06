@@ -10,10 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Generate Markdown from Swagger
-        uses: gautemo/swagger-to-markdown-action@v1
-        with:
-          input: guruprakashchinnasamy/Backstage_App/Backstage_docs/SwaggerInventory.yaml # Replace with the path to your Swagger spec file
-          output: docs # Replace with the path to your output directory
+        run: |
+          npm install -g swagger-markdown
+          swagger-markdown guruprakashchinnasamy/Backstage_App/Backstage_docs/SwaggerInventory.yaml -o ./docs # Replace with the path to your Swagger spec file and output directory
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
