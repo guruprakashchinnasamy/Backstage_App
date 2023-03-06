@@ -2,7 +2,7 @@ openapi: 3.0.1
 info:
   title: Inventory API
   description: An API to perform Inventory operations
-  version: '4.0'
+  version: '64.0'
 paths:
   /api/Products:
     get:
