@@ -7,11 +7,11 @@ jobs:
   generate-techdocs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Install Node.js and dependencies
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '16.0'
+          node-version: 16
       - name: Convert Swagger to Markdown
         uses: actions/github-script@v5
         with:
