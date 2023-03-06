@@ -3,7 +3,7 @@ name: Generate TechDocs from Swagger
 on:
   push:
     paths:
-      - 'swagger.yaml' # Replace with your Swagger file path
+      - './swagger.yaml' # Replace with your Swagger file path
 
 jobs:
   generate-techdocs:
