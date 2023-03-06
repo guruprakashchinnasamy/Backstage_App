@@ -8,17 +8,23 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
       - name: Install dependencies
-        run: npm install
-
-      - name: Generate docs
-        uses: theburmanator/spectacle-docs@v1.2.2
+        run: |
+          sudo npm install -g redoc-cli
+      - name: Generate Markdown Documentation
+        run: |
+          redoc-cli bundle https://raw.githubusercontent.com/guruprakashchinnasamy/Backstage_App/main/Backstage_docs/SwaggerInventory.yaml --output=/path/to/your/output.md
+      - name: Commit and push changes
+        uses: EndBug/add-and-commit@v7
         with:
-          specFile: https://raw.githubusercontent.com/guruprakashchinnasamy/Backstage_App/main/Backstage_docs/SwaggerInventory.yaml
-          outputDir: ./docs
-          docsType: markdown
+          message: "Generated Swagger documentation"
+          author_name: "Your Name"
+          author_email: "your.email@example.com"
+          branch: main
+          add: "path/to/your/output.md"
+          signoff: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_ACTION }}
