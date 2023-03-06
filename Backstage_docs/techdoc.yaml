@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: TechDocs
+metadata:
+  name: my-techdocs
+spec:
+  type: website
+  generator:
+    type: swagger
+    schemaPath: https://github.com/guruprakashchinnasamy/Backstage_App/blob/main/Backstage_docs/SwaggerInventory.yaml
+  publisher:
+    type: local
+    target: ./public/docs123
