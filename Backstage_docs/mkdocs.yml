@@ -16,7 +16,7 @@ nav:
       - (POST) Products: 'api/post-products.md'
       - (GET) Products {id}: 'api/get-product-id.md'
       - (PUT) Products {id}: 'api/put-product.md'
-      - (DELETE) Products {id}: 'api/delete-product.md'
+      #- (DELETE) Products {id}: 'api/delete-product.md'
       
   #- Subpage: sub-page.md
   #- 'Code Sample': code/code-sample.md
