@@ -6,14 +6,18 @@ on:
       - '**.yaml' # Replace with the path to your Swagger spec file
 
 jobs:
-  generate:
+  convert:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      
-      - name: Install dependencies
-        run: npm install swagger-to-markdown --save-dev
-      
-      - name: Generate Markdown
-        run: npx swagger-to-markdown -i Backstage_docs/SwaggerInventory.yaml -o docs/swagger.md
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: false
+          tags: my-image:latest
+
+      - name: Convert Swagger to Markdown
+        run: docker run --rm -v $(pwd):/app my-image:latest -i path/to/swagger.yaml -o path/to/output.md
