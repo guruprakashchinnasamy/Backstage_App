@@ -1,0 +1,22 @@
+name: CI/CD Pipeline
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn install
+      - name: Generate TechDocs from Swagger file
+        run: npx @openapitools/openapi-generator-cli generate -i ./edit/master/Backstage_docs/SwaggerInventory.yaml -g markdown -o ./edit/master/Backstage_docs/docs
+      - name: Commit and push changes
+        run: |
+          git config --global user.email "your-email@example.com"
+          git config --global user.name "Your Name"
+          git add .
+          git commit -m "Update TechDocs from Swagger file"
+          git push
