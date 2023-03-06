@@ -1,0 +1,32 @@
+name: Convert Swagger to Markdown
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Generate Markdown from Swagger
+        run: npx @openapitools/openapi-generator-cli generate -i https://raw.githubusercontent.com/guruprakashchinnasamy/Backstage_App/main/Backstage_docs/SwaggerInventory.yaml -g markdown -o ./testdocs
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add docs
+          git commit -m "Convert Swagger to Markdown"
+      
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: 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
