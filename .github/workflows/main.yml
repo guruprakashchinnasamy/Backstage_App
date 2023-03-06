@@ -19,7 +19,7 @@ jobs:
         with:
           script: |
             const { spawn } = require('child_process');
-            const swaggerFile = 'Backstage_docs/SwaggerInventory.yaml';
+            const swaggerFile = 'Backstage_docs/SwaggerInventordy.yaml';
             const outputDir = 'Backstage_docs/testdocs';
             const child = spawn('npx', ['swagger-to-markdown', '-i', swaggerFile, '-o', outputDir]);
             child.on('exit', (code) => {
