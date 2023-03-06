@@ -8,14 +8,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
 
-    - name: Generate Markdown
-      uses: sdelamo/swagger2markup@v3
-      with:
-        input: https://raw.githubusercontent.com/guruprakashchinnasamy/Backstage_App/main/Backstage_docs/SwaggerInventory.yaml
-        outputDir: docs
-        output: swagger
-        markupLanguage: MARKDOWN
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate docs
+        uses: theburmanator/spectacle-docs@v1.2.2
+        with:
+          specFile: https://raw.githubusercontent.com/guruprakashchinnasamy/Backstage_App/main/Backstage_docs/SwaggerInventory.yaml
+          outputDir: ./docs
+          docsType: markdown
