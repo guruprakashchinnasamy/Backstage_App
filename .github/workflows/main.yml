@@ -26,5 +26,6 @@ jobs:
           branch: main
           add: "Backstage_docs/output.md"
           signoff: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_ACTION }}
