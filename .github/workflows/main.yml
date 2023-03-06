@@ -27,6 +27,7 @@ jobs:
                 console.log('Swagger to Markdown conversion successful');
                 process.exit(0);
               } else {
+                console.error(code);
                 console.error('Swagger to Markdown conversion failed');
                 process.exit(1);
               }
