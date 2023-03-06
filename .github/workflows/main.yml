@@ -3,18 +3,30 @@ on:
   push:
     paths:
       - '**.yaml' # Replace with the path to your Swagger spec file
-
 jobs:
-  generate:
+  generate-techdocs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Generate Markdown from Swagger
-        run: |
-          npm install -g swagger-markdown
-          swagger-markdown guruprakashchinnasamy/Backstage_App/Backstage_docs/SwaggerInventory.yaml -o ./docs # Replace with the path to your Swagger spec file and output directory
-      - name: Commit and push changes
-        uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Install Node.js and dependencies
+        uses: actions/setup-node@v2
         with:
-          commit_message: "Updated Swagger Markdown files"
-          commit_options: '--no-verify'
+          node-version: '16.x'
+      - name: Convert Swagger to Markdown
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const { spawn } = require('child_process');
+            const swaggerFile = 'guruprakashchinnasamy/Backstage_App/Backstage_docs/SwaggerInventory.yaml';
+            const outputDir = './docs';
+            const child = spawn('npx', ['swagger-to-markdown', '-i', swaggerFile, '-o', outputDir]);
+            child.on('exit', (code) => {
+              if (code === 0) {
+                console.log('Swagger to Markdown conversion successful');
+                process.exit(0);
+              } else {
+                console.error('Swagger to Markdown conversion failed');
+                process.exit(1);
+              }
+            });
+          token: ${{ secrets.GITHUB_TOKEN }}
