@@ -16,4 +16,4 @@ jobs:
         run: npm install swagger-to-markdown --save-dev
       
       - name: Generate Markdown
-        run: npx swagger-to-markdown -i guruprakashchinnasamy/Backstage_App/blob/main/Backstage_docs/SwaggerInventory.yaml -o docs/swagger.md
+        run: npx swagger-to-markdown -i Backstage_docs/SwaggerInventory.yaml -o docs/swagger.md
