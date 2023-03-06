@@ -20,4 +20,4 @@ jobs:
           tags: my-image:latest
 
       - name: Convert Swagger to Markdown
-        run: docker run --rm -v $(pwd):/app my-image:latest -i path/to/swagger.yaml -o path/to/output.md
+        run: docker run --rm -v $(pwd):/app my-image:latest -i Backstage_docs/SwaggerInventory.yaml -o path/to/output.md
