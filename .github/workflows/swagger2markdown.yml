@@ -16,12 +16,12 @@ jobs:
       run: |
         sudo apt-get install nodejs
         sudo apt-get install npm
-        npm install -g swagger-markdown
+        npm install -g widdershins
 
     - name: Generate Markdown
       run: |
-        swagger-markdown -i https://raw.githubusercontent.com/guruprakashchinnasamy/Backstage_App/main/Backstage_docs/SwaggerInventory.yaml -o docs/all-apis.md
-
+        widdershins --environment https://raw.githubusercontent.com/guruprakashchinnasamy/Backstage_App/main/Backstage_docs/SwaggerInventory.yaml -o docs/all-apis.md
+        
     - name: Commit changes
       run: |
           git config --local user.email "action@github.com"
