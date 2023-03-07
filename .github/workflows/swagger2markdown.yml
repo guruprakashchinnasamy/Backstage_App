@@ -24,12 +24,11 @@ jobs:
 
     - name: Commit changes
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add .
-        git commit -m "Updated Swagger documentation [skip ci]"
-    
-    - name: Push changes
-      uses: ad-m/github-push-action@main
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+    - name: Add changes to staging area
+      run: git add .
+    - name: Push changes to repository
+      uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GIT_ACTION }}
