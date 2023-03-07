@@ -11,12 +11,12 @@ nav:
   - Users:
       - Internal Team : 'users/internal-team.md'
       - Thrid Party Team : 'users/thirdparty-team.md'
-  - API:
-      - (GET) Products: 'api/get-products.md'
-      - (POST) Products: 'api/post-products.md'
-      - (GET) Products {id}: 'api/get-product-id.md'
-      - (PUT) Products {id}: 'api/put-product.md'
-      - (DELETE) Product {id}: 'api/delete-product.md'
+  - API: 'https://guruprakashchinnasamy.github.io/Backstage_App/Backstage_docs/docs/api/all-apis.html'
+      #- (GET) Products: 'api/get-products.md'
+      #- (POST) Products: 'api/post-products.md'
+      #- (GET) Products {id}: 'api/get-product-id.md'
+      #- (PUT) Products {id}: 'api/put-product.md'
+      #- (DELETE) Product {id}: 'api/delete-product.md'
       
   #- Subpage: sub-page.md
   #- 'Code Sample': code/code-sample.md
