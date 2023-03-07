@@ -1,21 +1,30 @@
-apiVersion: backstage.io/v1alpha1
-kind: Component
+# my-component.docs.yml
+
+apiVersion: backstage.io/v1beta1
+kind: DocTemplate
 metadata:
-  name: my-component
-  description: My component
+  name: my-component-docs
+  title: My Component Docs
 spec:
-  type: service
-  owner: team-a
-  lifecycle: productsion
-  providesApis:
-    - id: default
-      openapiRef: "#openapi/my-component"
-  documentation:
-    - title: Docs
-      description: My component's documentation
-      path: docs
-      type: techdocs
-      extra:
-        processor:
-          type: html
-          target: https://raw.githubusercontent.com/guruprakashchinnasamy/Backstage_App/main/Backstage_docs/docs/api/all-apis.md
+  type: website
+  owner: my-team
+  markdown: |
+    # My Component Documentation
+
+    Welcome to the documentation for My Component.
+
+    ## Overview
+
+    My Component is a powerful tool for...
+
+    ## Installation
+
+    To install My Component, follow these steps...
+
+    ## Usage
+
+    To use My Component, follow these steps...
+
+  html: |
+    <iframe src="https://raw.githubusercontent.com/<username>/<repository>/<branch>/<path>/<filename>.html" frameborder="0" width="100%" height="600"></iframe>
+
