@@ -1,7 +1,7 @@
 # my-component.docs.yml
 
 apiVersion: backstage.io/v1beta1
-kind: DocTemplate
+kind: DocTemplateddd
 metadata:
   name: my-component-docs
   title: My Component Docs
