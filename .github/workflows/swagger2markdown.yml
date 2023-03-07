@@ -3,7 +3,7 @@ name: Swagger to Markdown
 on:
   push:
     paths:
-      - '**.yaml' # Replace with the path to your Swagger spec file
+      - '**.yahhml' # Replace with the path to your Swagger spec file
 
 jobs:
   build:
