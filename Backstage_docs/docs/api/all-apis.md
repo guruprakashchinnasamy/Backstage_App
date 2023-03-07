@@ -110,6 +110,96 @@ Status Code **200**
 This operation does not require authentication
 </aside>
 
+## post__api_Products
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /api/Products \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain'
+
+```
+
+```javascript
+const inputBody = '{
+  "productId": 0,
+  "name": "string",
+  "category": "string",
+  "color": "string",
+  "unitPrice": 0,
+  "availableQuantity": 0
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain'
+};
+
+fetch('/api/Products',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+`POST /api/Products`
+
+> Body parameter
+
+```json
+{
+  "productId": 0,
+  "name": "string",
+  "category": "string",
+  "color": "string",
+  "unitPrice": 0,
+  "availableQuantity": 0
+}
+```
+
+<h3 id="post__api_products-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|body|body|[Products](#schemaproducts)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"productId":0,"name":"string","category":"string","color":"string","unitPrice":0,"availableQuantity":0}
+```
+
+```json
+{
+  "productId": 0,
+  "name": "string",
+  "category": "string",
+  "color": "string",
+  "unitPrice": 0,
+  "availableQuantity": 0
+}
+```
+
+<h3 id="post__api_products-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|[Products](#schemaproducts)|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
 # Schemas
 
 <h2 id="tocS_Products">Products</h2>
