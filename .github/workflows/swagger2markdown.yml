@@ -1,4 +1,4 @@
-name: Swagger to Markdown
+name: Swagger to Markdown using widdershins
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
       - name: Install dependencies
         run: npm install -g widdershins
       - name: Generate documentation
-        run: widdershins --search false --language_tabs 'shell:Shell' 'javascript:JavaScript' --summary https://raw.githubusercontent.com/guruprakashchinnasamy/Backstage_App/main/Backstage_docs/SwaggerInventory.yaml -o docs/all-apis.md
+        run: widdershins --search false --language_tabs 'shell:Shell' 'javascript:JavaScript' --summary https://raw.githubusercontent.com/guruprakashchinnasamy/Backstage_App/main/Backstage_docs/SwaggerInventory.yaml -o Backstage_docs/docs/api/all-apis.md
       - name: Commit documentation
         uses: EndBug/add-and-commit@v7
         with:
