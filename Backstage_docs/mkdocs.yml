@@ -12,7 +12,7 @@ nav:
       - Internal Team : 'users/internal-team.md'
       - Thrid Party Team : 'users/thirdparty-team.md'
   - API (md): 'api/all-apis.md'
-  - API: 'https://guruprakashchinnasamy.github.io/Backstage_App/all-apis.html'
+  - API (html): 'https://guruprakashchinnasamy.github.io/Backstage_App/all-apis.html'
       #- (GET) Products: 'api/get-products.md'
       #- (POST) Products: 'api/post-products.md'
       #- (GET) Products {id}: 'api/get-product-id.md'
