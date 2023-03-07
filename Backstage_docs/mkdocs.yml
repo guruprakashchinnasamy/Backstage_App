@@ -11,7 +11,7 @@ nav:
   - Users:
       - Internal Team : 'users/internal-team.md'
       - Thrid Party Team : 'users/thirdparty-team.md'
-  - API: {% include 'api/loader-all-apis.md'
+  - API: 'api/loader-all-apis.md'
       #- (GET) Products: 'api/get-products.md'
       #- (POST) Products: 'api/post-products.md'
       #- (GET) Products {id}: 'api/get-product-id.md'
