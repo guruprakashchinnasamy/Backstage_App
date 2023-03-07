@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: my-component
+  description: My component
+spec:
+  type: service
+  owner: team-a
+  lifecycle: production
+  providesApis:
+    - id: default
+      openapiRef: "#openapi/my-component"
+  documentation:
+    - title: Docs
+      description: My component's documentation
+      path: docs
+      type: techdocs
+      extra:
+        processor:
+          type: html
+          target: https://raw.githubusercontent.com/guruprakashchinnasamy/Backstage_App/main/Backstage_docs/docs/api/all-apis.md
