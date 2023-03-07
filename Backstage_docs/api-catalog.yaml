@@ -6,7 +6,7 @@ metadata:
 spec:
   type: service
   owner: team-a
-  lifecycle: production
+  lifecycle: productsion
   providesApis:
     - id: default
       openapiRef: "#openapi/my-component"
