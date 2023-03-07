@@ -16,7 +16,7 @@ jobs:
           sudo npm install -g redoc-cli
       - name: Generate Markdown Documentation
         run: |
-          redoc-cli bundle https://raw.githubusercontent.com/guruprakashchinnasamy/Backstage_App/main/Backstage_docs/SwaggerInventory.yaml --output=Backstage_docs/output.md
+          redoc-cli bundle https://raw.githubusercontent.com/guruprakashchinnasamy/Backstage_App/main/Backstage_docs/SwaggerInventory.yaml --output=Backstage_docs/docs/api/all-apis.md
       - name: Commit and push changes
         uses: EndBug/add-and-commit@v7
         with:
@@ -24,7 +24,7 @@ jobs:
           author_name: "Your Name"
           author_email: "your.email@example.com"
           branch: main
-          add: "Backstage_docs/output.md"
+          add: "Backstage_docs/docs/api/all-apis.md"
           signoff: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
         env:
