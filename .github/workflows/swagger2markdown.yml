@@ -3,7 +3,7 @@ name: Swagger to Markdown using widdershins
 on:
   push:
     paths:
-      - '**.yamlTest' # Replace with the path to your Swagger spec file
+      - '**.yaml' # Replace with the path to your Swagger spec file
 
 jobs:
   generate-docs:
