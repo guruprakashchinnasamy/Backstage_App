@@ -3,7 +3,7 @@ name: Swagger to Markdown using Slate
 on:
   push:
     paths:
-      - '**.yamlTest' # Replace with the path to your Swagger spec file
+      - '**.yaml' # Replace with the path to your Swagger spec file
 
 jobs:
   generate-docs:
@@ -12,11 +12,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Install dependencies
-        run: npm install -g slate
-      - name: Install slate-tool
-        run: npm i @shopify/slate-tools
+        run: npm install -g swagger-to-slate
       - name: Generate documentation
-        run: slate source Backstage_docs/SwaggerInventory.yaml output Backstage_docs/docs/api/all-apis-slate1.md
+        run: swagger-to-slate -i Backstage_docs/SwaggerInventory.yaml -o Backstage_docs/docs/api/all-apis-slate1.md
       - name: Commit documentation
         uses: EndBug/add-and-commit@v7
         with:
