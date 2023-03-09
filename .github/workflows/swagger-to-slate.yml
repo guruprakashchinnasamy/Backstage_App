@@ -13,8 +13,8 @@ jobs:
         uses: actions/checkout@v3
       - name: Install dependencies
         run: npm install -g slate
-      - name: Install dependencies
-        run: npm install --save-dev slate-tools
+      - name: Install slate-tool
+        run: npm i @shopify/slate-tools
       - name: Generate documentation
         run: slate source Backstage_docs/SwaggerInventory.yaml output Backstage_docs/docs/api/all-apis-slate1.md
       - name: Commit documentation
