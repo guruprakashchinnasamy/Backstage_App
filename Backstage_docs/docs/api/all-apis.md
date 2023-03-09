@@ -70,7 +70,7 @@ fetch('/api/Products',
 > 200 Response
 
 ```
-[{"productId":0,"name":"string","category":"string","color":"string","unitPrice":0,"availableQuantity":0}]
+[{"productId":0,"name":"string","category":"string","color":"string","unitPrice":0,"availableQuantity":0,"quantity2":0}]
 ```
 
 ```json
@@ -81,7 +81,8 @@ fetch('/api/Products',
     "category": "string",
     "color": "string",
     "unitPrice": 0,
-    "availableQuantity": 0
+    "availableQuantity": 0,
+    "quantity2": 0
   }
 ]
 ```
@@ -105,6 +106,7 @@ Status Code **200**
 |» color|string¦null|false|none|none|
 |» unitPrice|number(double)|false|none|none|
 |» availableQuantity|integer(int32)|false|none|none|
+|» quantity2|integer(int32)|false|none|none|
 
 <aside class="success">
 This operation does not require authentication
@@ -129,7 +131,8 @@ const inputBody = '{
   "category": "string",
   "color": "string",
   "unitPrice": 0,
-  "availableQuantity": 0
+  "availableQuantity": 0,
+  "quantity2": 0
 }';
 const headers = {
   'Content-Type':'application/json',
@@ -161,7 +164,8 @@ fetch('/api/Products',
   "category": "string",
   "color": "string",
   "unitPrice": 0,
-  "availableQuantity": 0
+  "availableQuantity": 0,
+  "quantity2": 0
 }
 ```
 
@@ -169,6 +173,7 @@ fetch('/api/Products',
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
+|Token|query|string|false|none|
 |body|body|[Products](#schemaproducts)|false|none|
 
 > Example responses
@@ -176,7 +181,7 @@ fetch('/api/Products',
 > 200 Response
 
 ```
-{"productId":0,"name":"string","category":"string","color":"string","unitPrice":0,"availableQuantity":0}
+{"productId":0,"name":"string","category":"string","color":"string","unitPrice":0,"availableQuantity":0,"quantity2":0}
 ```
 
 ```json
@@ -186,11 +191,81 @@ fetch('/api/Products',
   "category": "string",
   "color": "string",
   "unitPrice": 0,
-  "availableQuantity": 0
+  "availableQuantity": 0,
+  "quantity2": 0
 }
 ```
 
 <h3 id="post__api_products-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|[Products](#schemaproducts)|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## delete__api_Products_{id}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X DELETE /api/Products/{id} \
+  -H 'Accept: text/plain'
+
+```
+
+```javascript
+
+const headers = {
+  'Accept':'text/plain'
+};
+
+fetch('/api/Products/{id}',
+{
+  method: 'DELETE',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+`DELETE /api/Products/{id}`
+
+<h3 id="delete__api_products_{id}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|id|path|integer(int32)|true|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"productId":0,"name":"string","category":"string","color":"string","unitPrice":0,"availableQuantity":0,"quantity2":0}
+```
+
+```json
+{
+  "productId": 0,
+  "name": "string",
+  "category": "string",
+  "color": "string",
+  "unitPrice": 0,
+  "availableQuantity": 0,
+  "quantity2": 0
+}
+```
+
+<h3 id="delete__api_products_{id}-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -216,7 +291,8 @@ This operation does not require authentication
   "category": "string",
   "color": "string",
   "unitPrice": 0,
-  "availableQuantity": 0
+  "availableQuantity": 0,
+  "quantity2": 0
 }
 
 ```
@@ -231,4 +307,5 @@ This operation does not require authentication
 |color|string¦null|false|none|none|
 |unitPrice|number(double)|false|none|none|
 |availableQuantity|integer(int32)|false|none|none|
+|quantity2|integer(int32)|false|none|none|
 
