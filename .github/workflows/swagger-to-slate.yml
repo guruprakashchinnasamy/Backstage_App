@@ -14,7 +14,7 @@ jobs:
       - name: Install dependencies
         run: npm install -g swagger-to-slate
       - name: Generate documentation
-        run: swagger-to-slate -i Backstage_docs/SwaggerInventory.yaml -o Backstage_docs/docs/api/all-apis-slate1.md
+        run: swagger-to-slate -i Backstage_docs/SwaggerInventory.yaml -o Backstage_docs/docs/api/all-apis-slate.md
       - name: Commit documentation
         uses: EndBug/add-and-commit@v7
         with:
