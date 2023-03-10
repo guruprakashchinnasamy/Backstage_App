@@ -1,4 +1,4 @@
-name: Swagger to Markdown
+name: Swagger to HTML
 
 on:
   push:
