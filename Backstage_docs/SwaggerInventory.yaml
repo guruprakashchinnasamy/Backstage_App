@@ -42,86 +42,32 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Products'
-    post:
-      tags:
-        - Products
-      parameters:
-        - name: Token
-          in: query
-          schema:
-            type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Products'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Products'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Products'
-      responses:
-        '200':
-          description: Success
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Products'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Products'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/Products'
-  '/api/Products/{id}':
-    delete:
-      tags:
-        - Products
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
-            format: int32
-      responses:
-        '200':
-          description: Success
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Products'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Products'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/Products'
 components:
   schemas:
     Products:
+      required:
+        - name
+        - productId
       type: object
       properties:
         productId:
           type: integer
           format: int32
         name:
+          maxLength: 30
+          minLength: 1
           type: string
-          nullable: true
         category:
           type: string
           nullable: true
         color:
           type: string
+          format: string
           nullable: true
         unitPrice:
           type: number
-          format: double
+          format: currency
         availableQuantity:
-          type: integer
-          format: int32
-        quantity2:
           type: integer
           format: int32
       additionalProperties: false
