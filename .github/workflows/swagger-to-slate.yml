@@ -3,7 +3,7 @@ name: Swagger to Markdown using Slate
 on:
   push:
     paths:
-      - '**.yaml' # Replace with the path to your Swagger spec file
+      - '**.yamlTest' # Replace with the path to your Swagger spec file
 
 jobs:
   generate-docs:
