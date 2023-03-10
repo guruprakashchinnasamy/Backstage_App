@@ -70,7 +70,7 @@ fetch('/api/Products',
 > 200 Response
 
 ```
-[{"productId":0,"name":"string","category":"string","color":"string","unitPrice":0,"availableQuantity":0}]
+[{"productId":0,"name":"string","category":"string","color":"string","unitPrice":0,"availableQuantity":0,"description":"string"}]
 ```
 
 ```json
@@ -81,7 +81,8 @@ fetch('/api/Products',
     "category": "string",
     "color": "string",
     "unitPrice": 0,
-    "availableQuantity": 0
+    "availableQuantity": 0,
+    "description": "string"
   }
 ]
 ```
@@ -105,6 +106,310 @@ Status Code **200**
 |» color|string(string)¦null|false|none|none|
 |» unitPrice|number(currency)|false|none|none|
 |» availableQuantity|integer(int32)|false|none|none|
+|» description|string¦null|false|none|none|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## post__api_Products
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST /api/Products \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: text/plain'
+
+```
+
+```javascript
+const inputBody = '{
+  "productId": 0,
+  "name": "string",
+  "category": "string",
+  "color": "string",
+  "unitPrice": 0,
+  "availableQuantity": 0,
+  "description": "string"
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'text/plain'
+};
+
+fetch('/api/Products',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+`POST /api/Products`
+
+> Body parameter
+
+```json
+{
+  "productId": 0,
+  "name": "string",
+  "category": "string",
+  "color": "string",
+  "unitPrice": 0,
+  "availableQuantity": 0,
+  "description": "string"
+}
+```
+
+<h3 id="post__api_products-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|body|body|[Products](#schemaproducts)|false|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"productId":0,"name":"string","category":"string","color":"string","unitPrice":0,"availableQuantity":0,"description":"string"}
+```
+
+```json
+{
+  "productId": 0,
+  "name": "string",
+  "category": "string",
+  "color": "string",
+  "unitPrice": 0,
+  "availableQuantity": 0,
+  "description": "string"
+}
+```
+
+<h3 id="post__api_products-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|[Products](#schemaproducts)|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## get__api_Products_{id}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET /api/Products/{id} \
+  -H 'Accept: text/plain'
+
+```
+
+```javascript
+
+const headers = {
+  'Accept':'text/plain'
+};
+
+fetch('/api/Products/{id}',
+{
+  method: 'GET',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+`GET /api/Products/{id}`
+
+<h3 id="get__api_products_{id}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|id|path|integer(int32)|true|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"productId":0,"name":"string","category":"string","color":"string","unitPrice":0,"availableQuantity":0,"description":"string"}
+```
+
+```json
+{
+  "productId": 0,
+  "name": "string",
+  "category": "string",
+  "color": "string",
+  "unitPrice": 0,
+  "availableQuantity": 0,
+  "description": "string"
+}
+```
+
+<h3 id="get__api_products_{id}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|[Products](#schemaproducts)|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## put__api_Products_{id}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X PUT /api/Products/{id} \
+  -H 'Content-Type: application/json'
+
+```
+
+```javascript
+const inputBody = '{
+  "productId": 0,
+  "name": "string",
+  "category": "string",
+  "color": "string",
+  "unitPrice": 0,
+  "availableQuantity": 0,
+  "description": "string"
+}';
+const headers = {
+  'Content-Type':'application/json'
+};
+
+fetch('/api/Products/{id}',
+{
+  method: 'PUT',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+`PUT /api/Products/{id}`
+
+> Body parameter
+
+```json
+{
+  "productId": 0,
+  "name": "string",
+  "category": "string",
+  "color": "string",
+  "unitPrice": 0,
+  "availableQuantity": 0,
+  "description": "string"
+}
+```
+
+<h3 id="put__api_products_{id}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|id|path|integer(int32)|true|none|
+|body|body|[Products](#schemaproducts)|false|none|
+
+<h3 id="put__api_products_{id}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|None|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## delete__api_Products_{id}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X DELETE /api/Products/{id} \
+  -H 'Accept: text/plain'
+
+```
+
+```javascript
+
+const headers = {
+  'Accept':'text/plain'
+};
+
+fetch('/api/Products/{id}',
+{
+  method: 'DELETE',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+`DELETE /api/Products/{id}`
+
+<h3 id="delete__api_products_{id}-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|id|path|integer(int32)|true|none|
+
+> Example responses
+
+> 200 Response
+
+```
+{"productId":0,"name":"string","category":"string","color":"string","unitPrice":0,"availableQuantity":0,"description":"string"}
+```
+
+```json
+{
+  "productId": 0,
+  "name": "string",
+  "category": "string",
+  "color": "string",
+  "unitPrice": 0,
+  "availableQuantity": 0,
+  "description": "string"
+}
+```
+
+<h3 id="delete__api_products_{id}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Success|[Products](#schemaproducts)|
 
 <aside class="success">
 This operation does not require authentication
@@ -126,7 +431,8 @@ This operation does not require authentication
   "category": "string",
   "color": "string",
   "unitPrice": 0,
-  "availableQuantity": 0
+  "availableQuantity": 0,
+  "description": "string"
 }
 
 ```
@@ -141,4 +447,5 @@ This operation does not require authentication
 |color|string(string)¦null|false|none|none|
 |unitPrice|number(currency)|false|none|none|
 |availableQuantity|integer(int32)|false|none|none|
+|description|string¦null|false|none|none|
 
