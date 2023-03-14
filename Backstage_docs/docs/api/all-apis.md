@@ -1,5 +1,5 @@
 ---
-title: Inventory API 2 v2.10
+title: Inventory API 23 v2.10
 language_tabs:
   - shell: Shell
   - javascript: JavaScript
@@ -16,13 +16,13 @@ headingLevel: 2
 
 <!-- Generator: Widdershins v4.0.1 -->
 
-<h1 id="inventory-api-2">Inventory API 2 v2.10</h1>
+<h1 id="inventory-api-23">Inventory API 23 v2.10</h1>
 
 > Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
 
 An API to perform Inventory operations
 
-<h1 id="inventory-api-2-products">Products</h1>
+<h1 id="inventory-api-23-products">Products</h1>
 
 ## get__api_Products
 
