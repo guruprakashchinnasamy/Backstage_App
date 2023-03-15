@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: Inventory API 23
+  title: Inventory API
   description: An API to perform Inventory operations
   version: '2.10'
 paths:
